@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast } from 'react-toastify';
 import apiDevBuger from "../../services/api";
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useUser } from '../../hooks/UserContext'
 
 
@@ -18,6 +18,8 @@ import Button from "../../components/Button";
 
 
 function Login() {
+
+  const history = useHistory()
 
   const {putUserData } = useUser()
 
@@ -46,6 +48,12 @@ function Login() {
     )
    
     putUserData(data)
+
+
+    setTimeout(() => {
+      history.push('/')
+    }, 1000);
+    
    
   }
 
