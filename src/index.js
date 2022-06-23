@@ -8,15 +8,15 @@ import GlobalStyles from './styles/globalStyles'
 import { UserProvider } from './hooks/UserContext'
 
 
-
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render (
   <>
   <UserProvider>
     <Routes />
   </UserProvider>
     <ToastContainer autoClose={2000}/>
     <GlobalStyles />
-  </>,
-
-  document.getElementById('root')
+  </>
 )
+
+

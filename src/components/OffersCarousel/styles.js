@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-background-color: #EFEFEF;
+background-color: #FFFFFF;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -33,6 +33,14 @@ export const ContainerItems = styled.div`
 display: flex;
 flex-direction: column;
 
+p {
+ font-weight: 700;
+font-size: 18px;
+line-height: 120%;
+color: #424242;
+padding-top: 8px;
+}
+
 
 `
 
@@ -40,6 +48,7 @@ export const Image = styled.img`
 width: 200px;
 border-radius:10px;
 cursor: pointer;
+margin-bottom: 8px;
 `
 
 export const Button = styled.button`
