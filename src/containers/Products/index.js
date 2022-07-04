@@ -5,9 +5,9 @@ import ProductsImage from '../../assets/produtos-home.svg'
 import formatCurrency from '../../utils/formatCurrency'
 
 import { Container, ProductsImg, CategoryButton, CategoryMenu, ProductsContainer } from './styles'
-import CardProduct from "../../components/CardProduct";
+import {CardProduct} from "../../components";
 
-function Products() {
+export function Products() {
 
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
@@ -74,4 +74,3 @@ function Products() {
     )
 }
 
-export default Products

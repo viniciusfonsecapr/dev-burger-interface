@@ -14,10 +14,10 @@ import { useUser } from '../../hooks/UserContext'
 import LoginImg from '../../assets/hamburger-login.svg'
 import Logo from '../../assets/logo.svg'
 import { Container, LoginImage, ContainerItens, Label, Input, ErrorMessage, SignInLink } from './styles'
-import Button from "../../components/Button";
+import {Button} from "../../components";
 
 
-function Login() {
+export function Login() {
 
   const history = useHistory()
 
@@ -87,5 +87,5 @@ function Login() {
 }
 
 
-export default Login
+
 

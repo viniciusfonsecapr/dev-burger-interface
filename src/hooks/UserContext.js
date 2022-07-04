@@ -6,7 +6,7 @@ const UserContext = createContext({})
 
 
 export const UserProvider = ({ children }) => {
-    const [ userData, setUserData] = useState({})
+    const [ userData, setUserData] = useState([])
 
 
     const putUserData = async userInfo => {

@@ -10,9 +10,9 @@ import { Link } from 'react-router-dom'
 import RegistersImage from '../../assets/carne-cadastro.svg'
 import Logo from '../../assets/logo-cadastro.svg'
 import { Container, RegisterImage, ContainerItens, Label, Input, ErrorMessage, SignUpLink } from './styles'
-import Button from "../../components/Button";
+import {Button} from "../../components";
 
-function Register() {
+export function Register() {
 
   const schema = Yup.object().shape({
     name: Yup.string().required("Nome é obrigatorio"),
@@ -87,5 +87,5 @@ function Register() {
 }
 
 
-export default Register
+
 
