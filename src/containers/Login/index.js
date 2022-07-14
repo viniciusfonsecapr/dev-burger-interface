@@ -31,8 +31,6 @@ export function Login() {
     resolver: yupResolver(schema)
   });
 
- 
-
   const onSubmit = async clientData => {
     const { data } = await toast.promise(
       apiDevBuger.post('sessions', {
@@ -49,16 +47,11 @@ export function Login() {
    
     putUserData(data)
 
-
     setTimeout(() => {
       history.push('/')
     }, 1000);
     
-   
   }
-
-
- 
 
   return (
     <Container>

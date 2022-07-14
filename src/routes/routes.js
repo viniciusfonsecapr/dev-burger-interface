@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Switch, Route, BrowserRouter as Router} from 'react-router-dom'
 
-import {Login, Register, Home,Products} from '../containers'
+import {Login, Register, Home,Products, Cart} from '../containers'
 
 import PrivateRoute from './private-route'
 
@@ -15,6 +15,7 @@ function Routes(){
                 <Route component={Register} path="/register"></Route>
                 <PrivateRoute exact component={Home} path="/"></PrivateRoute>
                 <PrivateRoute  component={Products} path="/produtos"></PrivateRoute>
+                <PrivateRoute  component={Cart} path="/carrinho"></PrivateRoute>
             </Switch>
         </Router>
     )
