@@ -2,16 +2,20 @@ import React from "react";
 
 import CartImage from '../../assets/card-image.svg'
 
-import { CartItems } from "../../components";
+import { CartItems, CardResume } from "../../components";
 
-import { Container, CartImg } from './styles' 
+import { Container, CartImg, Wrapper } from './styles'
 
-export function Cart (){
+export function Cart() {
 
     return (
         <Container>
             <CartImg src={CartImage} alt="logo-do-carrinho"></CartImg>
-            <CartItems></CartItems>
+            <Wrapper>
+                <CartItems></CartItems>
+                <CardResume></CardResume>
+            </Wrapper>
+
         </Container>
     )
 }
