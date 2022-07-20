@@ -2,6 +2,7 @@ import React from "react";
 import {Route, Redirect } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
+import { Header } from "../components";
 
 function PrivateRoute({component, ...rest}){
 
@@ -10,7 +11,12 @@ function PrivateRoute({component, ...rest}){
     if(!user){
         return <Redirect to='/login' />
     }
-    return <Route {...rest} component={component}/>
+    return (
+        <>
+        <Header></Header>
+        <Route {...rest} component={component}/>
+        </>
+    )
 }
 
 export default PrivateRoute

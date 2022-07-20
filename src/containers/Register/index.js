@@ -57,7 +57,7 @@ export function Register() {
 
       <ContainerItens>
 
-        <img src={Logo} alt="logo-codeburger"></img>
+        <img src={Logo} alt="logo-codeburger" width={250} style={{marginLeft: 75}}></img>
         <h1>Cadastre-se</h1>
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
 

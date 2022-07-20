@@ -59,7 +59,7 @@ export function Login() {
 
       <ContainerItens>
 
-        <img src={Logo} alt="logo-codeburger"></img>
+        <img src={Logo} alt="logo-codeburger" width={250} style={{marginLeft: 75}}></img>
         <h1>Login</h1>
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Label>Email</Label>

@@ -27,7 +27,7 @@ export const ContainerItens = styled.div`
   box-shadow: 0px 4px 15px rgba(74, 144, 226, 0.24);
 
   h1 {
-    margin-top: 105px;
+    margin-top: 50px;
     text-align: center;
     font-style: normal;
     font-weight: 500;

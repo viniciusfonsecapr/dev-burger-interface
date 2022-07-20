@@ -7,12 +7,17 @@ import formatCurrency from '../../utils/formatCurrency'
 import { Container, ProductsImg, CategoryButton, CategoryMenu, ProductsContainer } from './styles'
 import {CardProduct} from "../../components";
 
-export function Products() {
+export function Products({location: {state}}) {
+
+    let categoryId = 0 
+    if(state?.categoryId){
+        categoryId = state.categoryId
+    }
 
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
-    const [activeCategory, setActiveCategory] = useState(0)
+    const [activeCategory, setActiveCategory] = useState(categoryId)
 
 
     useEffect(() => {

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
 background-color: #EFEFEF;
@@ -42,7 +43,7 @@ border-radius:10px;
 cursor: pointer;
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
 margin-top: 16px;
 background: #9758A6;
 border-radius: 8px;
@@ -62,6 +63,11 @@ cursor: pointer;
 &:active {
     opacity:  0.6;
 }
+
+text-decoration: none;
+display: flex;
+align-items: center;
+justify-content: center;
 `
 
 
