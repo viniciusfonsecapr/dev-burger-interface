@@ -6,8 +6,8 @@ background-color: #EFEFEF;
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 35px;
-padding: 35px 0;
+gap: 15px;
+padding: 25px 0;
 
 .rec.rec-arrow {
     background-color: #9758a6;
