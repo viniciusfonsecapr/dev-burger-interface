@@ -1,6 +1,8 @@
 import React from 'react'
-import { Container, ProductImg } from './styles'
+import { ProductImg, ReactSelectStyle } from './styles'
 import PropTypes from 'prop-types';
+import api from '../../../services/api'
+
 
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
@@ -14,10 +16,30 @@ import Typography from '@mui/material/Typography';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-
-function Row({ row }) {
+import status from './order-status';
+function Row({ row, orders, setOrders }) {
 
     const [open, setOpen] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(false);
+
+    async function setNewStatus(id, status) {
+        setIsLoading(true)
+
+        try {
+            await api.put(`orders/${id}`, { status })
+
+            const newOrders = orders.map(order => {
+                return order._id === id ? { ...order, status } : order
+            })
+            setOrders(newOrders)
+
+        } catch (err) {
+            console.error(err)
+        } finally {
+            setIsLoading(false)
+        }
+
+    }
 
     return (
         <React.Fragment>
@@ -36,7 +58,19 @@ function Row({ row }) {
                 </TableCell>
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.date}</TableCell>
-                <TableCell>{row.status}</TableCell>
+                <TableCell>
+                    <ReactSelectStyle
+                        options={status.filter(sts => sts.value !== 'Todos')}
+                        menuPortalTarget={document.body}
+                        placeholder="Status"
+                        defaultValue={status.find(options => options.value === row.status || null)}
+                        onChange={newStatus => {
+                            setNewStatus(row.orderId, newStatus.value)
+                        }}
+                        isLoading={isLoading}
+                    />
+
+                </TableCell>
                 <TableCell></TableCell>
             </TableRow>
             <TableRow>
@@ -83,6 +117,8 @@ function Row({ row }) {
 }
 
 Row.propTypes = {
+    orders: PropTypes.array,
+    setOrders: PropTypes.func,
     row: PropTypes.shape({
         name: PropTypes.string.isRequired,
         orderId: PropTypes.string.isRequired,
