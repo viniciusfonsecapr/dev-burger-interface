@@ -24,7 +24,7 @@ function ListProducts() {
             const { data } = await api.get('products')
 
             setProducts(data)
-            console.log(data)
+            
         }
    
         loadOrders()
@@ -53,7 +53,8 @@ function ListProducts() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {products?.map((product) => (
+                        {products && 
+                        products.map((product) => (
                             <TableRow
                                 key={product.id}
                                
