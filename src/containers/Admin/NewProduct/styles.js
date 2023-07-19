@@ -10,10 +10,11 @@ export const Container = styled.div`
 
   form {
     width: 400px;
-    height: 500px;
+    height: 550px;
     background: #565656;
     display: flex;
     flex-direction: column;
+    gap:25px;
     border-radius: 10px;
     padding: 40px;
     box-shadow: 0px 4px 14px 0px #0000001a;
@@ -21,14 +22,13 @@ export const Container = styled.div`
 `
 
 export const Label = styled.p`
-  margin-bottom: 10px;
+
   font-size: 18px;
   color: white;
 `
 
 export const Input = styled.input`
-  height: 50px;
-  margin-bottom: 25px;
+  height: 40px;
   padding-left: 10px;
   font-size: 18px;
   width: 100%;
