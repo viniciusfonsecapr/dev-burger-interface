@@ -22,7 +22,7 @@ export function SideMenuAdmin({path}) {
                 </ItemContainer>
             ))}
             <hr></hr>
-            <ItemContainer style={{ position: 'absolute', bottom: '30px' }}>
+            <ItemContainer style={{ position: 'absolute', bottom: '5%' }}>
                 <LogoutIcon style={{ color: '#ffff' }} />
                 <ListLink to={paths.Login} onClick={logout} >Sair</ListLink>
             </ItemContainer>

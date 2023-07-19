@@ -1,6 +1,8 @@
 import ShoppingBag from '@mui/icons-material/ShoppingBag';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import paths from '../../constants/paths';
+
 
 const listLinks = [
     {
@@ -15,6 +17,13 @@ const listLinks = [
         label:'Listar Produtos',
         link: paths.Products,
         icon: FormatListBulletedIcon
+
+    },
+    {
+        id:3,
+        label:'Novo Produto',
+        link: paths.NewProduct,
+        icon: AddCircleIcon
 
     }
 

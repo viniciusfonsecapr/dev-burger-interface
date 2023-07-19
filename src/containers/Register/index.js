@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom'
 
 import RegistersImage from '../../assets/carne-cadastro.svg'
 import Logo from '../../assets/logo-cadastro.svg'
-import { Container, RegisterImage, ContainerItens, Label, Input, ErrorMessage, SignUpLink } from './styles'
+import { Container, RegisterImage, ContainerItens, Label, Input, SignUpLink } from './styles'
+import { ErrorMessage } from "../../components";
 import {Button} from "../../components";
 
 export function Register() {

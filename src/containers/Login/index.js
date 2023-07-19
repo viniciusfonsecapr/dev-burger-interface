@@ -15,10 +15,10 @@ import {
   ContainerItens,
   Label,
   Input,
-  ErrorMessage,
   SignInLink
 } from './styles'
 import { Button } from '../../components'
+import {ErrorMessage} from '../../components/ErrorMessage'
 
 export function Login() {
   const history = useHistory()

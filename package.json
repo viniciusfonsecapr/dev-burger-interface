@@ -65,7 +65,7 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "file-loader": "^6.2.0",
     "prettier": "^2.6.2",
-    "react-hook-form": "^7.31.1",
+    "react-hook-form": "^7.45.2",
     "url-loader": "^4.1.1"
   }
 }

@@ -62,15 +62,7 @@ export const Input = styled.input`
   font-size: 15px;
 `
 
-export const ErrorMessage = styled.p`
-font-weight: 400;
-font-size: 13px;
-line-height: 14px;
-color: #CC1717;
-margin-top: 2px;
 
-
-`
 
 export const SignUpLink = styled.p`
   
