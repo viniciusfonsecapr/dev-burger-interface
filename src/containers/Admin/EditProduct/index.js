@@ -7,7 +7,8 @@ import {
   Label,
   Input,
   ButtonAddProduct,
-  LabelUpload
+  LabelUpload,
+  ContainerInputCheckBox
 } from './styles'
 import ReactSelect from 'react-select'
 import { useForm, Controller } from 'react-hook-form'
@@ -17,22 +18,19 @@ import { toast } from 'react-toastify'
 import { useHistory } from 'react-router-dom'
 
 
-function NewProduct() {
+function EditProduct() {
   const schema = Yup.object().shape({
     name: Yup.string().required('Nome Produto é Obrigatario'),
     price: Yup.string('Preço é Obrigatario').required('Preço é Obrigatario'),
     category: Yup.object().typeError('test').required('Escolha uma categoria'),
-    file: Yup.mixed()
-      .test('required', 'Carregue um arquivo', value => {
-        return value?.length > 0
-      }).test('fileSize', 'Carrega arquivos até 2mb', value => { return value[0]?.size <= 200000 })
+    offer: Yup.bool().typeError('test')
 
 
   })
 
   const [fileName, setFileName] = useState(null)
   const [categories, setCategories] = useState([])
-  const { push } = useHistory()
+  const { push, location: { state: { product } } } = useHistory()
 
   const {
     register,
@@ -58,16 +56,17 @@ function NewProduct() {
 
     productDataFormData.append('name', data.name)
     productDataFormData.append('price', data.price)
-    productDataFormData.append('category_id', data.category.id)
+    productDataFormData.append('category', data.category.id)
     productDataFormData.append('file', data.file[0])
+    productDataFormData.append('offer', data.offer)
 
     await toast.promise(
-      api.post('products', productDataFormData), {
-      pending: 'Criando um novo produto',
-      success: 'Produto criado com Sucesso',
-      error:'Falha ao criar o produto',
+      api.put(`products/${product.id}`, productDataFormData), {
+      pending: 'Editando um novo produto',
+      success: 'Produto Editado com Sucesso',
+      error: 'Falha ao Editar o produto',
       position: "bottom-center",
-      autoClose: 3500,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -78,7 +77,7 @@ function NewProduct() {
     )
     setTimeout(() => {
       push('/listar-produtos')
-    },3500)
+    }, 2500)
 
   }
 
@@ -87,19 +86,20 @@ function NewProduct() {
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Label>Nome</Label>
-          <Input type="text" {...register('name')} placeholder="Nome" />
+          <Input type="text" {...register('name')} placeholder="Nome" defaultValue={product.name} />
           <ErrorMessage>{errors.name?.message}</ErrorMessage>
         </div>
 
         <div>
           <Label>Preço</Label>
-          <Input type="number" {...register('price')} placeholder="Preço" />
+          <Input type="number" {...register('price')} placeholder="Preço" defaultValue={product.price} />
           <ErrorMessage>{errors.price?.message}</ErrorMessage>
         </div>
 
         <div>
           <Controller
             name="category"
+            defaultValue={product.category}
             control={control}
             render={({ field }) => {
               return (
@@ -109,6 +109,7 @@ function NewProduct() {
                   getOptionLabel={cat => cat.name}
                   getOptionValue={cat => cat.id}
                   placeholder="Categoria do Produto"
+                  defaultValue={product.category}
                 />
               )
             }}
@@ -136,11 +137,15 @@ function NewProduct() {
           </LabelUpload>
         </div>
 
+        <ContainerInputCheckBox>
+          <input type='checkbox'  {...register('offer')} defaultChecked={product.offer} />
+          <p>Está em Oferta?</p>
+        </ContainerInputCheckBox>
 
-        <ButtonAddProduct type="submit">Adicionar Produto</ButtonAddProduct>
+        <ButtonAddProduct type="submit">Editar Produto</ButtonAddProduct>
       </form>
     </Container>
   )
 }
 
-export default NewProduct
+export default EditProduct
