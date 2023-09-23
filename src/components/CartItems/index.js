@@ -22,7 +22,7 @@ export function CartItems() {
                 cartProducts.map(product => (
 
                     <Body key={product.id}>
-                        <img src={product.url}></img>
+                        <img src={product.url} alt="carrinho-de-compras"></img>
                         <p>{product.name}</p>
                         <p>{formatCurrency(product.price)}</p>
                         <div className="quantity-container">
@@ -37,7 +37,7 @@ export function CartItems() {
                 : (
                     <EmptyCart>
                         <p>Carrinho Vazio</p>
-                        <img src={Empty}></img>
+                        <img src={Empty} alt="carrinho-vazio"></img>
                     </EmptyCart>
                 )
             }
