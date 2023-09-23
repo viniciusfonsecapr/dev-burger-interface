@@ -54,7 +54,7 @@ function Orders() {
         setFilteredOrders(newFilteredOrders)
     }
    
-  }, [orders])
+  }, [orders, activeStatus])
 
 
   function handleStatus(status) {
