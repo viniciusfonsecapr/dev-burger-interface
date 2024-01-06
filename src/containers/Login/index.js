@@ -68,7 +68,7 @@ export function Login() {
 
   return (
     <Container>
-      <LoginImage src={LoginImg} alt="login-image" />
+      {/* <LoginImage src={LoginImg} alt="login-image" /> */}
 
       <ContainerItens>
         <img
@@ -93,14 +93,14 @@ export function Login() {
             error={errors.password?.message}
           />
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
-          <Button type="submit" style={{ marginTop: 67 }}>
+          <Button type="submit" style={{ marginTop: 37, marginLeft:'30%', background:'green' }}>
             Sign In
           </Button>
         </form>
         <SignInLink>
           Não possui conta?{' '}
-          <Link style={{ color: 'white' }} to="/register">
-            Signup
+          <Link style={{ color: '#ffdc00', }} to="/register">
+            Registrar
           </Link>
         </SignInLink>
       </ContainerItens>

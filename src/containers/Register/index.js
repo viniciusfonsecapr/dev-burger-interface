@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { toast } from 'react-toastify';
 import apiDevBuger from "../../services/api";
 import { Link } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 
 import RegistersImage from '../../assets/carne-cadastro.svg'
@@ -25,6 +26,11 @@ export function Register() {
     resolver: yupResolver(schema)
   });
 
+  let history = useHistory();
+
+  function backToLogin() {
+    history.push("/login");
+  }
  
 
   const onSubmit = async clientData => {
@@ -37,6 +43,7 @@ export function Register() {
       )
       if(status === 201 || status === 200){
         toast.success('Cadastro criado com sucesso')
+        backToLogin()
       } else if(status === 409 ){
         toast.error('Email já cadastrado! Faça login para acessar')
       } else {
@@ -54,7 +61,7 @@ export function Register() {
 
   return (
     <Container>
-      <RegisterImage src={RegistersImage} alt="register-image" />
+      {/* <RegisterImage src={RegistersImage} alt="register-image" /> */}
 
       <ContainerItens>
 
@@ -78,9 +85,9 @@ export function Register() {
           <Input type="password" {...register("confirmPassword")} error={errors.confirmPassword?.message} />
           <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
 
-          <Button type="submit" style={{ marginTop: 28}}>Sign Up</Button>
+          <Button type="submit" style={{ marginTop: 28, marginLeft:'30%' , background:'yellow', color:'black' }}>Sign Up</Button>
         </form>
-        <SignUpLink>Já possui conta? <Link  style={{color: 'white'}} to="/login">Signup</Link></SignUpLink>
+        <SignUpLink>Já possui conta? <Link  style={{color: 'green'}} to="/login">Login</Link></SignUpLink>
       </ContainerItens>
 
     </Container>
