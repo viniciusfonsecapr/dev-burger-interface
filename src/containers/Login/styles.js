@@ -61,7 +61,7 @@ export const Input = styled.input`
   border: ${ props => props.error ? '2px solid #CC1717;' : 'none'};
   outline: none;
   background: #ffff;
-  box-shadow: 3px 3px 10px rgba(30, 944, 56, 0.89);
+  box-shadow: 3px 3px 10px ${ props => props.error ? '#CC1717;' : '#0AB653'};
   border-radius: 5px;
   font-size: 15px;
 `
