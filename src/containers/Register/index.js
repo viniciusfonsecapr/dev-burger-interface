@@ -117,7 +117,7 @@ export function Register() {
         <SignUpLink>
           Já possui conta?
           <LoginButton>
-            <Link style={{ color: 'white' }} to="/login">
+            <Link to="/login">
               Login
             </Link>
           </LoginButton>

@@ -102,7 +102,7 @@ export function Login() {
         <SignInLink>
           Não possui conta?{' '}
           <RegisterButton>
-            <Link style={{ color: '#000' }} to="/register">
+            <Link to="/register">
               Registrar
             </Link>
           </RegisterButton>

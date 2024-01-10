@@ -23,7 +23,7 @@ export const ButtonStyle = styled(Button)`
   display: center;
   justify-content: center;
   align-items: center;
-  background: #0AB653;
+  background: #0ab653;
   font-weight: 600;
   font-size: 18px;
 `
@@ -81,12 +81,11 @@ export const ContainerItens = styled.div`
 `
 
 export const LogoImagem = styled.img`
-margin: 0 auto;
-width:250px;
-display: flex;
-justify-content:center;
-align-items:center;
-
+  margin: 0 auto;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const Label = styled.p`
@@ -122,33 +121,31 @@ export const SignInLink = styled.p`
   font-weight: 600;
   font-size: 16px;
   line-height: 16px;
-  
- 
 `
 export const RegisterButton = styled(Button)`
-  height:100%;
-  display:flex;
-  margin-left:20px;
+  height: 100%;
+  display: flex;
+  margin-left: 60px;
   justify-content: center;
   align-items: center;
-  width:80%;
-  background: #FFFF00;
+  width: 0%;
+  background: transparent;
 
   a {
     cursor: pointer;
     font-weight: 600;
     font-size: 20px;
     line-height: 16px;
-    text-decoration: none;
+    text-decoration: underline;
+    color: #000;
   }
 
   @media (max-width: 700px) {
-    height:100%;
-  padding-left: 10px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  width:70%;
- 
+    height: 100%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
   }
 `

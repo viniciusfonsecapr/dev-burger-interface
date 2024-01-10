@@ -124,30 +124,32 @@ export const SignUpLink = styled.p`
 `
 export const LoginButton = styled(Button)`
   height: 35px;
-  margin-left: 15%;
+  margin-left: 10%;
   margin-top:-10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  background: #0ab653;
+  width:0%;
+  background: transparent;
+ 
 
   a {
     cursor: pointer;
     font-weight: 600;
     font-size: 20px;
     line-height: 16px;
-    text-decoration: none;
+    text-decoration: underline;
+    color:#000;
   }
 
   @media (max-width: 700px) {
     height: 25px;
     margin-top:-4px;
-    margin-left: 18px;
+    margin-left: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    background: #0ab653;
+    width: 0%;
+    background: transparent;
   }
 `
