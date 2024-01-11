@@ -22,7 +22,7 @@ export function CartItems() {
                 cartProducts.map(product => (
 
                     <Body key={product.id}>
-                        <img src={product.url} alt="carrinho-de-compras"></img>
+                        <img src={product.url} alt="foto-do-produto"></img>
                         <p>{product.name}</p>
                         <p style={{marginLeft: '-15%'}}>{formatCurrency(product.price)}</p>
                         <div className="quantity-container">

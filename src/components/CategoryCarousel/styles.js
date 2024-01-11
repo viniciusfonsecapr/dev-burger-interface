@@ -28,6 +28,10 @@ padding: 25px 0;
 
 export const CategoryImg = styled.img`
 
+@media (max-width:600px) {
+    width: 80%;
+}
+
 `
 
 export const ContainerItems = styled.div`

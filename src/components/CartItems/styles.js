@@ -43,10 +43,13 @@ export const Body = styled.div`
     padding: 10px;
     grid-gap: 2px 2px;
     width: 90%;
+  
 
     img {
-      width: 80%;
-      height: 80%;
+      margin-top:12px;
+      width: 50px;
+      height: 50px;
+      margin-right:20px;
     }
     p {
       font-size: 15px;
