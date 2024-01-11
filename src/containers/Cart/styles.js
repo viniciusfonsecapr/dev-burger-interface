@@ -14,5 +14,11 @@ display: flex;
 justify-content: space-evenly;
 margin-top: 30px ;
 padding-bottom: 30px;
+
+@media (max-width:600px) {
+    flex-direction: column;
+    margin-top: 10px ;
+    
+}
 `
 

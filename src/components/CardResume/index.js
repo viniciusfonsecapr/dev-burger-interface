@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import { Container } from './styles'
-import { Button } from "../Button";
+import { Container, ButtonFinish } from './styles'
+
 import { useCart } from '../../hooks/CartContext'
 import formatCurrency from "../../utils/formatCurrency";
 import api from "../../services/api";
@@ -52,9 +52,9 @@ export function CardResume() {
                 </div>
 
             </Container>
-            <Button style={{ width: '100%', marginTop: 30 }} onClick={submitOrder}>
+            <ButtonFinish  onClick={submitOrder}>
                 Finalizar Pedido
-            </Button>
+            </ButtonFinish>
         </div>
     )
 }
