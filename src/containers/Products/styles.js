@@ -35,4 +35,11 @@ gap: 20px;
 padding: 40px;
 justify-items: center;
 margin-top: 20px;
+
+@media (max-width: 600px) {
+
+    grid-template-columns: repeat(1,1fr);
+    gap: 30px;
+    padding: 10px;
+}
 `

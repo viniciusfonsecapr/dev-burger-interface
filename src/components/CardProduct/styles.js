@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import {Button} from '../Button'
+
 
 export const Container = styled.div`
 background: #FFFFFF;
@@ -32,5 +34,15 @@ font-size: 18px;
 line-height: 21px;
 color: #000000;
 margin-top: 30px;
+
+`
+
+export const ButtonAdd = styled(Button)`
+margin-top:10%;
+
+
+@media (max-width:600px) {
+    margin-top:10%;
+}
 
 `
