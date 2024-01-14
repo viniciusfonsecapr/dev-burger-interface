@@ -8,6 +8,7 @@ align-items: center;
 gap: 35px;
 padding: 35px 0;
 
+
 .rec.rec-arrow {
     background-color: #9758a6;
     color: #EFEFEF;
@@ -36,6 +37,7 @@ export const CategoryImg = styled.img`
 export const ContainerItems = styled.div`
 display: flex;
 flex-direction: column;
+align-items: center;
 
 p {
  font-weight: 700;
@@ -61,7 +63,7 @@ background: #9758A6;
 border-radius: 8px;
 height: 50px;
 border: none;
-
+width: 100%;
 text-align: center;
 color: #FFFFFF;
 font-weight: 700;
