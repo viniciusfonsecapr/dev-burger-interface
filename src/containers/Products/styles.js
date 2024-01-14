@@ -27,12 +27,12 @@ export const CategoryButton = styled.button`
 `
 
 export const ProductsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 40px;
-  justify-items: center;
-  margin-top: 20px;
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 15px;
+justify-content:center;
+  margin-top: 30px;
 
   @media (min-width:350px) and (max-width: 700px) {
     display:flex;
@@ -52,9 +52,5 @@ export const ProductsContainer = styled.div`
     padding: 20px;
   }
 
-  @media (min-width: 1325px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap:10px;
-    padding: 10px;
-  }
+
 `

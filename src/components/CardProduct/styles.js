@@ -4,15 +4,13 @@ import { Button } from '../Button'
 export const Container = styled.div`
   background: #ffffff;
   box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
-  border-radius: 30px;
+  border-radius: 20px;
   display: flex;
-  gap: 12px;
-  padding: 16px;
-  width: 20vw;
+  padding: 20px;
   div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
   }
 
   @media (min-width:350px) and (max-width: 700px) {
@@ -42,8 +40,9 @@ export const Container = styled.div`
   }
 `
 export const Image = styled.img`
-  width: 100px;
-  height: 100px;
+margin-left: 2%;
+  width: 150px;
+  height: 120px;
   border-radius: 10px;
 
   @media (max-width: 700px) {
@@ -60,16 +59,16 @@ export const ProductName = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
-  line-height: 19px;
+  line-height: 30px;
   color: #000000;
 `
 export const ProductPrice = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 21px;
+  line-height: 15px;
   color: #000000;
-  margin-top: 30px;
+  margin-top: 20px;
 `
 
 export const ButtonAdd = styled(Button)`
