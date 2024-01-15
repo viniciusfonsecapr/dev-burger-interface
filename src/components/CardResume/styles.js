@@ -58,3 +58,18 @@ export const ButtonFinish = styled(Button)`
     width: 80%
   }
 `
+
+
+export const ButtonEmptyCart = styled(Button)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top:10%;
+  width: 100%;
+  @media (max-width: 600px) {
+    margin: 0 auto;
+    margin-top:5%;
+    width: 80%
+  }
+`

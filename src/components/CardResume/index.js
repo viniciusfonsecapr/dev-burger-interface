@@ -7,7 +7,7 @@ import formatCurrency from "../../utils/formatCurrency";
 import api from "../../services/api";
 
 /// Visual e Estilos 
-import { Container, ButtonFinish } from './styles'
+import { Container, ButtonFinish, ButtonEmptyCart } from './styles'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,6 +15,7 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+
 
 
 export function CardResume() {
@@ -111,10 +112,24 @@ export function CardResume() {
 
             </Modal>
 
-            <ButtonFinish onClick={handleClick}>
-                Finalizar Pedido
-            </ButtonFinish>
 
-        </div>
+            {cartProducts && cartProducts.length > 0 ?
+                cartProducts.map(product => (
+
+                    <ButtonFinish ButtonFinish onClick={handleClick}>
+                    Finalizar Pedido
+                </ButtonFinish> 
+                   
+                ))
+                : (
+                    <ButtonEmptyCart style={{background: 'red'}}> 
+                        Coloque Produtos no Carrinho
+                    </ButtonEmptyCart>
+                )
+            }
+
+        </div >
     )
 }
+
+ 
