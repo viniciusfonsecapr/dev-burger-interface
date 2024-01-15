@@ -13,6 +13,13 @@ export const CategoryMenu = styled.div`
   justify-content: center;
   gap: 50px;
   margin-top: 20px;
+
+
+  .MuiMenu-list {
+    width:100vw;
+  }
+
+
 `
 
 export const CategoryButton = styled.button`
@@ -32,7 +39,7 @@ flex-direction: row;
 flex-wrap: wrap;
 gap: 15px;
 justify-content:center;
-  margin-top: 30px;
+  margin-top: 50px;
 
   @media (min-width:350px) and (max-width: 700px) {
     display:flex;
@@ -40,7 +47,7 @@ justify-content:center;
     justify-content:center;
     gap: 25px;
     padding-left: 0 auto;
-    margin-top: 5px;
+    margin-top: 40px;
   }
 
   @media (min-width:1000px) and (max-width: 1200px) {
@@ -54,3 +61,5 @@ justify-content:center;
 
 
 `
+
+
