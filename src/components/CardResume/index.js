@@ -113,18 +113,20 @@ export function CardResume() {
             </Modal>
 
 
-            {cartProducts && cartProducts.length > 0 ?
+            {cartProducts && cartProducts.length === 0 ?
                 cartProducts.map(product => (
 
-                    <ButtonFinish ButtonFinish onClick={handleClick}>
-                    Finalizar Pedido
-                </ButtonFinish> 
+                     <ButtonEmptyCart style={{background: 'red'}}> 
+                        Coloque Produtos no Carrinho
+                    </ButtonEmptyCart>
+
+              
                    
                 ))
                 : (
-                    <ButtonEmptyCart style={{background: 'red'}}> 
-                        Coloque Produtos no Carrinho
-                    </ButtonEmptyCart>
+                         <ButtonFinish ButtonFinish onClick={handleClick}>
+                    Finalizar Pedido
+                </ButtonFinish> 
                 )
             }
 
