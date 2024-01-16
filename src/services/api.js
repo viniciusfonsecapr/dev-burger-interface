@@ -2,11 +2,8 @@ import axios from  'axios'
 
 
 const apiDevBuger = axios.create({
-      baseURL: 'https://dev-club-burger-production.up.railway.app/',
-        // production 
-
-    //  baseURL:'https://dev-club-burger-dev.up.railway.app',
-    
+     baseURL: 'https://dev-club-burger-production.up.railway.app/',
+     
 })
 
 apiDevBuger.interceptors.request.use( async config => {
