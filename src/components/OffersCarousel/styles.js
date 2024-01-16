@@ -8,6 +8,7 @@ align-items: center;
 gap: 35px;
 padding: 35px 0;
 
+
 .rec.rec-arrow {
     background-color: #9758a6;
     color: #EFEFEF;
@@ -27,11 +28,16 @@ padding: 35px 0;
 
 export const CategoryImg = styled.img`
 
+@media (max-width:600px) {
+    width: 60%;
+}
+
 `
 
 export const ContainerItems = styled.div`
 display: flex;
 flex-direction: column;
+align-items: center;
 
 p {
  font-weight: 700;
@@ -46,6 +52,7 @@ padding-top: 8px;
 
 export const Image = styled.img`
 width: 200px;
+height:200px;
 border-radius:10px;
 cursor: pointer;
 margin-bottom: 8px;
@@ -57,7 +64,7 @@ background: #9758A6;
 border-radius: 8px;
 height: 50px;
 border: none;
-
+width: 100%;
 text-align: center;
 color: #FFFFFF;
 font-weight: 700;

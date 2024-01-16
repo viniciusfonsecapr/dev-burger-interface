@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
-import { Container } from './styles'
-import { Button } from "../Button";
+/// Serviços Reutilizados ou Acessados
 import { useCart } from '../../hooks/CartContext'
 import formatCurrency from "../../utils/formatCurrency";
 import api from "../../services/api";
 
+/// Visual e Estilos 
+import { Container, ButtonFinish, ButtonEmptyCart } from './styles'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
 
 
 export function CardResume() {
@@ -15,6 +23,20 @@ export function CardResume() {
     const [finalPrice, setFinalPrice] = useState(0)
     const [deliveryTax] = useState(5)
     const { cartProducts } = useCart()
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    let history = useHistory();
+
+    function handleClick() {
+        handleOpen();
+        submitOrder()
+    }
+
+    function handleHome() {
+        history.push("/");
+    }
 
     useEffect(() => {
         const sumAllItems = cartProducts.reduce((acc, current) => {
@@ -34,10 +56,25 @@ export function CardResume() {
                 error: 'Falha ao tentar realizar o seu pedido',
             }
         )
+
     }
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'background.paper',
+        border: '1px solid #fff',
+        boxShadow: 24,
+        p: 5,
+    };
 
     return (
         <div>
+
+
             <Container>
                 <div className="container-top">
                     <h2 className="title">Resumo do pedido</h2>
@@ -51,10 +88,50 @@ export function CardResume() {
                     <p>{formatCurrency(finalPrice + deliveryTax)}</p>
                 </div>
 
+
+
             </Container>
-            <Button style={{ width: '100%', marginTop: 30 }} onClick={submitOrder}>
-                Finalizar Pedido
-            </Button>
-        </div>
+
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    {submitOrder &&
+                        <Typography sx={{ marginBottom: '15px' }} id="modal-modal-title" variant="h6" component="h2">
+
+                            Pedido realizado com sucesso
+
+                        </Typography>
+                    }
+
+                    <Button variant="contained" onClick={handleHome}>Voltar para a Home</Button>
+                </Box>
+
+            </Modal>
+
+
+            {cartProducts && cartProducts.length === 0 ?
+                cartProducts.map(product => (
+
+                     <ButtonEmptyCart style={{background: 'red'}}> 
+                        Coloque Produtos no Carrinho
+                    </ButtonEmptyCart>
+
+              
+                   
+                ))
+                : (
+                         <ButtonFinish ButtonFinish onClick={handleClick}>
+                    Finalizar Pedido
+                </ButtonFinish> 
+                )
+            }
+
+        </div >
     )
 }
+
+ 

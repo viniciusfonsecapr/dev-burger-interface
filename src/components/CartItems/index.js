@@ -22,16 +22,16 @@ export function CartItems() {
                 cartProducts.map(product => (
 
                     <Body key={product.id}>
-                        <img src={product.url} alt="carrinho-de-compras"></img>
+                        <img src={product.url} alt="foto-do-produto"></img>
                         <p>{product.name}</p>
-                        <p>{formatCurrency(product.price)}</p>
+                        <p style={{marginLeft: '-15%'}}>{formatCurrency(product.price)}</p>
                         <div className="quantity-container">
                             <button onClick={() => decreaseProducts(product.id)}>-</button>
                             <p>{product.quantity}</p>
                             <button onClick={() => increaseProducts(product.id)}>+</button>
                         </div>
 
-                        <p>{formatCurrency(product.quantity * product.price)}</p>
+                        <p style={{marginLeft: '22%'}}>{formatCurrency(product.quantity * product.price)}</p>
                     </Body>
                 ))
                 : (

@@ -28,6 +28,10 @@ padding: 25px 0;
 
 export const CategoryImg = styled.img`
 
+@media (max-width:600px) {
+    width: 80%;
+}
+
 `
 
 export const ContainerItems = styled.div`
@@ -39,6 +43,7 @@ flex-direction: column;
 
 export const Image = styled.img`
 width: 200px;
+height: 200px;
 border-radius:10px;
 cursor: pointer;
 `

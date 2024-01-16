@@ -11,14 +11,16 @@ import LoginImg from '../../assets/hamburger-login.svg'
 import Logo from '../../assets/logo.svg'
 import {
   Container,
-  LoginImage,
+  LogoImagem,
   ContainerItens,
   Label,
   Input,
-  SignInLink
+  SignInLink,
+  ButtonStyle,
+  RegisterButton
 } from './styles'
-import { Button } from '../../components'
-import {ErrorMessage} from '../../components/ErrorMessage'
+// import { Button } from '../../components'
+import { ErrorMessage } from '../../components/ErrorMessage'
 
 export function Login() {
   const history = useHistory()
@@ -57,26 +59,26 @@ export function Login() {
 
 
     setTimeout(() => {
-      if(data.admin) {
+      if (data.admin) {
         history.push('/pedidos')
       } else {
         history.push('/')
       }
-      
+
     }, 1000)
   }
 
   return (
     <Container>
-      <LoginImage src={LoginImg} alt="login-image" />
+      {/* <LoginImage src={LoginImg} alt="login-image" /> */}
 
       <ContainerItens>
-        <img
+        <LogoImagem
           src={Logo}
           alt="logo-codeburger"
-          width={250}
-          style={{ marginLeft: 75 }}
-        ></img>
+       
+
+        ></LogoImagem>
         <h1>Login</h1>
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Label>Email</Label>
@@ -86,22 +88,25 @@ export function Login() {
             error={errors.email?.message}
           />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
-          <Label>Password</Label>
+          <Label>Senha</Label>
           <Input
             type="password"
             {...register('password')}
             error={errors.password?.message}
           />
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
-          <Button type="submit" style={{ marginTop: 67 }}>
-            Sign In
-          </Button>
+          <ButtonStyle type="submit">
+            Entrar
+          </ButtonStyle>
         </form>
         <SignInLink>
           Não possui conta?{' '}
-          <Link style={{ color: 'white' }} to="/register">
-            Signup
-          </Link>
+          <RegisterButton>
+            <Link to="/register">
+              Registrar
+            </Link>
+          </RegisterButton>
+
         </SignInLink>
       </ContainerItens>
     </Container>

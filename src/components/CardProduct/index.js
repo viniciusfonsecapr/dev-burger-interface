@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types'
 import { useCart } from "../../hooks/CartContext";
 import { useHistory } from "react-router-dom";
-import {Container,Image, ProductName, ProductPrice } from './styles'
-import {Button} from '../Button'
+import {Container,Image, ProductName, ProductPrice, ButtonAdd } from './styles'
+
 
 export function CardProduct ({ product }){
 
@@ -16,11 +16,11 @@ export function CardProduct ({ product }){
             <div>
             <ProductName>{product.name}</ProductName>
             <ProductPrice>{product.formatedPrice}</ProductPrice>
-            <Button onClick={() => {
+            <ButtonAdd onClick={() => {
                 putProductInCart(product)
                 push('/carrinho')
                 }} 
-                >Adicionar</Button>
+                >Adicionar</ButtonAdd>
             </div>
         </Container>
     )
